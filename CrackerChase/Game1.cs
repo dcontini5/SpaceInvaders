@@ -17,6 +17,9 @@ namespace CrackerChase
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+        // Scores //
+        List<int> scores;
+
         // Game World
         // These variables define the world 
 
@@ -212,6 +215,8 @@ namespace CrackerChase
             }
             else
             {
+                leaderboard.LoadScores(scores); // Load the scores into the leaderboard //
+
                 if (keys.IsKeyDown(Keys.Space))
                 {
                     leaderboard.DrawContent(); // Display the Leaderboard //
@@ -246,6 +251,10 @@ namespace CrackerChase
 
             spriteBatch.End();
 
+            if (!playing)
+            {
+                leaderboard.DrawContent();
+            }
 
             base.Draw(gameTime);
         }
