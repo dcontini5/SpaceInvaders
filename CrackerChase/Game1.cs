@@ -102,6 +102,11 @@ namespace CrackerChase
             base.Initialize();
         }
 
+        private void LoadLeaderboard()
+        {
+
+        }
+
         /// <summary>
         /// LoadContent will be called once per game and is the place to load
         /// all of your content.
@@ -113,8 +118,8 @@ namespace CrackerChase
 
             messageFont = Content.Load<SpriteFont>("MessageFont");
 
-            leaderboard = new Leaderboard(); // Load the Leaderboard //
-            leaderboard.LoadContent(graphics, spriteBatch);
+//            leaderboard = new Leaderboard(); // Load the Leaderboard //
+//            leaderboard.LoadContent(graphics, spriteBatch);
 
             screenWidth = GraphicsDevice.Viewport.Width;
             screenHeight = GraphicsDevice.Viewport.Height;
@@ -252,11 +257,11 @@ namespace CrackerChase
             }
             else
             {
-                leaderboard.LoadScores(scores); // Load the scores into the leaderboard //
+//                leaderboard.LoadScores(scores); // Load the scores into the leaderboard //
 
                 if (keys.IsKeyDown(Keys.Space))
                 {
-                    leaderboard.DrawContent(); // Display the Leaderboard //
+//                    leaderboard.DrawContent(); // Display the Leaderboard //
                     Exit();
                 }
             }
@@ -285,12 +290,12 @@ namespace CrackerChase
             Vector2 statusPos = new Vector2(xPos, 10);
 
             spriteBatch.DrawString(messageFont, messageString, statusPos, Color.Red);
-
+            
             spriteBatch.End();
 
             if (!playing)
             {
-                leaderboard.DrawContent();
+//                leaderboard.DrawContent();
             }
 
             base.Draw(gameTime);
