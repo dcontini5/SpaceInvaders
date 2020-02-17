@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>Windows</Platform>
+  <Config />
+  <SourceFiles>
+    <File>//adir.hull.ac.uk/home/532/532631/Dev_group_Git/CrackerChase/Content/Beep.wav</File>
+    <File>//adir.hull.ac.uk/home/532/532631/Dev_group_Git/CrackerChase/Content/Burp.wav</File>
+    <File>//adir.hull.ac.uk/home/532/532631/Dev_group_Git/CrackerChase/Content/cheese.png</File>
+    <File>//adir.hull.ac.uk/home/532/532631/Dev_group_Git/CrackerChase/Content/cracker.png</File>
+    <File>//adir.hull.ac.uk/home/532/532631/Dev_group_Git/CrackerChase/Content/Explosion.wav</File>
+    <File>//adir.hull.ac.uk/home/532/532631/Dev_group_Git/CrackerChase/Content/Laser.wav</File>
+    <File>//adir.hull.ac.uk/home/532/532631/Dev_group_Git/CrackerChase/Content/MessageFont.spritefont</File>
+    <File>//adir.hull.ac.uk/home/532/532631/Dev_group_Git/CrackerChase/Content/Space_invaders_character_2 (1).jpeg</File>
+    <File>//adir.hull.ac.uk/home/532/532631/Dev_group_Git/CrackerChase/Content/Tablecloth.png</File>
+  </SourceFiles>
+  <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+  </DestFiles>
+</SourceFileCollection>

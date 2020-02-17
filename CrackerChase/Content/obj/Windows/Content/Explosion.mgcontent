@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>G:/Dev_group_Git/CrackerChase/Content/Explosion.wav</SourceFile>
+  <SourceTime>2020-02-17T13:46:42+00:00</SourceTime>
+  <DestFile>G:/Dev_group_Git/CrackerChase/Content/bin/Windows/Content/Explosion.xnb</DestFile>
+  <DestTime>2020-02-17T14:02:39.835839+00:00</DestTime>
+  <Importer>WavImporter</Importer>
+  <ImporterTime>2019-07-05T11:04:00+01:00</ImporterTime>
+  <Processor>SoundEffectProcessor</Processor>
+  <ProcessorTime>2019-07-05T11:04:00+01:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>

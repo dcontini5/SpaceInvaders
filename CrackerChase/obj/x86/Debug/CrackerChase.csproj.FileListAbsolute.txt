@@ -29,3 +29,4 @@ G:\Dev_group_Git\CrackerChase\obj\x86\Debug\CrackerChase.pdb
 G:\Dev_group_Git\CrackerChase\bin\Windows\x86\Debug\Content\Beep.xnb
 G:\Dev_group_Git\CrackerChase\bin\Windows\x86\Debug\Content\Explosion.xnb
 G:\Dev_group_Git\CrackerChase\bin\Windows\x86\Debug\Content\Laser.xnb
+G:\Dev_group_Git\CrackerChase\bin\Windows\x86\Debug\Content\Space_invaders_character_2 (1).xnb

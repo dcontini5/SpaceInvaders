@@ -17,14 +17,20 @@ namespace CrackerChase
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-
         // Game World
         // These variables define the world 
 
         Mover cheese;
         Target enemy;
         Sprite background;
+
+        Sprite Obsticle;
+
+        //sounds
         SoundEffect BurpSound;
+
+        Leaderboard leaderboard; // Leaderboard //
+
         SoundEffect LaserSound;
         SoundEffect ExplosionSound;
         SoundEffect BeepSound;
@@ -34,6 +40,9 @@ namespace CrackerChase
 
         List<Sprite> gameSprites = new List<Sprite>();
         List<Target> enemies = new List<Target>();
+        List<Target> crackers = new List<Target>();
+        List<Sprite> Obsticles = new List<Sprite>();
+
 
         SpriteFont messageFont;
 
@@ -56,19 +65,26 @@ namespace CrackerChase
             {
                 t.Reset();
             }
+            foreach (Sprite s in Obsticles)
+            {
+                s.Reset();
+            }
+
             messageString = "Cracker Chase";
 
             playing = true;
             timer = 600;
+
             score = 0;
             lives = 3;
-           
+
         }
 
-      
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
+            
             Content.RootDirectory = "Content";
         }
 
@@ -92,6 +108,9 @@ namespace CrackerChase
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
+            leaderboard = new Leaderboard(); // Load the Leaderboard //
+            leaderboard.LoadContent(graphics, spriteBatch);
+
             messageFont = Content.Load<SpriteFont>("MessageFont");
 
             screenWidth = GraphicsDevice.Viewport.Width;
@@ -100,7 +119,11 @@ namespace CrackerChase
             Texture2D cheeseTexture = Content.Load<Texture2D>("cheese");
             Texture2D cloth = Content.Load<Texture2D>("Tablecloth");
             Texture2D crackerTexture = Content.Load<Texture2D>("cracker");
+
             Texture2D invader = Content.Load<Texture2D>("invader");
+
+            Texture2D ObsticleTexture = Content.Load<Texture2D>("Space_invaders_character_2 (1)");
+
 
             BurpSound = Content.Load<SoundEffect>("Burp");
             LaserSound = Content.Load<SoundEffect>("Laser");
@@ -117,6 +140,16 @@ namespace CrackerChase
                 enemy = new Target(screenWidth, screenHeight, invader, crackerWidth, 0, 0);
                 gameSprites.Add(enemy);
                 enemies.Add(enemy);
+            }
+
+            // obsticle
+            int j = 250;
+            for (int i = 0; i < 3; i++)
+            {
+                j += 80;
+                Obsticle = new Sprite(screenWidth, screenHeight, ObsticleTexture, crackerWidth, j, 350);
+                gameSprites.Add(Obsticle);
+                Obsticles.Add(Obsticle);
             }
 
             int cheeseWidth = screenWidth / 15;
@@ -138,9 +171,9 @@ namespace CrackerChase
         }
 
 
-     
 
-        
+
+
         /// <summary>
         /// Allows the game to run logic such as updating the world,
         /// checking for collisions, gathering input, and playing audio.
@@ -152,7 +185,6 @@ namespace CrackerChase
 
             if (playing)
             {
-
 
                 if (keys.IsKeyDown(Keys.Up))
                 {
@@ -219,6 +251,7 @@ namespace CrackerChase
             {
                 if (keys.IsKeyDown(Keys.Space))
                 {
+                    leaderboard.DrawContent(); // Display the Leaderboard //
                     Exit();
                 }
             }
@@ -226,8 +259,8 @@ namespace CrackerChase
             base.Update(gameTime);
         }
 
-        
-        
+
+
 
         /// <summary>
         /// This is called when the game should draw itself.
