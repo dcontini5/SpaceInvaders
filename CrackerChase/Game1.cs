@@ -21,7 +21,7 @@ namespace CrackerChase
         // These variables define the world 
 
         Mover cheese;
-        Target cracker;
+        Target enemy;
         Sprite background;
 
         Sprite Obsticle;
@@ -39,8 +39,10 @@ namespace CrackerChase
         int screenHeight;
 
         List<Sprite> gameSprites = new List<Sprite>();
+        List<Target> enemies = new List<Target>();
         List<Target> crackers = new List<Target>();
         List<Sprite> Obsticles = new List<Sprite>();
+
 
         SpriteFont messageFont;
 
@@ -48,6 +50,7 @@ namespace CrackerChase
 
         int score;
         int timer;
+        int lives;
 
         bool playing;
 
@@ -58,7 +61,7 @@ namespace CrackerChase
             {
                 s.Reset();
             }
-            foreach (Target t in crackers)
+            foreach (Target t in enemies)
             {
                 t.Reset();
             }
@@ -71,9 +74,9 @@ namespace CrackerChase
 
             playing = true;
             timer = 600;
-            score = 0;         
 
-          
+            score = 0;
+            lives = 3;
 
         }
 
@@ -116,7 +119,11 @@ namespace CrackerChase
             Texture2D cheeseTexture = Content.Load<Texture2D>("cheese");
             Texture2D cloth = Content.Load<Texture2D>("Tablecloth");
             Texture2D crackerTexture = Content.Load<Texture2D>("cracker");
+
+            Texture2D invader = Content.Load<Texture2D>("invader");
+
             Texture2D ObsticleTexture = Content.Load<Texture2D>("Space_invaders_character_2 (1)");
+
 
             BurpSound = Content.Load<SoundEffect>("Burp");
             LaserSound = Content.Load<SoundEffect>("Laser");
@@ -126,13 +133,13 @@ namespace CrackerChase
             background = new Sprite(screenWidth, screenHeight, cloth, screenWidth, 0, 0);
             gameSprites.Add(background);
 
-            int crackerWidth = screenWidth / 20;
+            int crackerWidth = screenWidth / 30;
 
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 25; i++)
             {
-                cracker = new Target(screenWidth, screenHeight, crackerTexture, crackerWidth, 0, 0);
-                gameSprites.Add(cracker);
-                crackers.Add(cracker);
+                enemy = new Target(screenWidth, screenHeight, invader, crackerWidth, 0, 0);
+                gameSprites.Add(enemy);
+                enemies.Add(enemy);
             }
 
             // obsticle
@@ -219,22 +226,22 @@ namespace CrackerChase
                 {
                     s.Update(1.0f / 60.0f);
                 }
-                foreach (Target t in crackers)
+                foreach (Target t in enemies)
                 {
                     if (cheese.IntersectsWith(t))
                     {
                         BurpSound.Play();
                         t.Reset();
-                        score = score + 10;
+                        score = score + t.Score;
                     }
                 }
 
                 timer = timer - 1;
 
                 int secsLeft = timer / 60;
-                messageString = "Time: " + secsLeft.ToString() + " Score: " + score;
+                messageString = "Time: " + secsLeft.ToString() + " Score: " + score + " Lives: " + lives;
 
-                if (timer == 0)
+                if (timer == 0 || lives == 0)
                 {
                     messageString = " Game Over : Press Space to exit   Score: " + score.ToString();
                     playing = false;
