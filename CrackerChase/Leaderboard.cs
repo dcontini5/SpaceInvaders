@@ -14,15 +14,18 @@ namespace CrackerChase
     {
         private SpriteFont leaderboard_header;
         private SpriteBatch sb;
+        private GraphicsDeviceManager gdm;
 
         private List<int> scores;
 
         // Load the SpriteFont Graphics ready for rendering //
         public void LoadContent(GraphicsDeviceManager graphics, SpriteBatch spriteBatch)
         {
-            //sb = spriteBatch;
-            //graphics = new GraphicsDeviceManager(this);
-            //Content.RootDirectory = "Content";
+            sb = spriteBatch;
+            gdm = graphics;
+            //graphics = new GraphicsDeviceManager(GraphicsDevice);
+            Content.RootDirectory = "Content";
+            //spriteBatch = new SpriteBatch(GraphicsDevice);
             leaderboard_header = Content.Load<SpriteFont>("MessageFont"); //Leaderboard_Title
         }
 
@@ -39,6 +42,8 @@ namespace CrackerChase
         // Draw the SpriteFont to the screen //
         public void DrawContent()
         {
+            gdm.GraphicsDevice.Clear(Color.Black);
+
             sb.Begin();
 
             sb.DrawString(leaderboard_header, "Leaderboard", new Vector2(0, 200), Color.White);

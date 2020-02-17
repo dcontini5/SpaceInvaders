@@ -92,10 +92,10 @@ namespace CrackerChase
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
+            messageFont = Content.Load<SpriteFont>("MessageFont");
+
             leaderboard = new Leaderboard(); // Load the Leaderboard //
             leaderboard.LoadContent(graphics, spriteBatch);
-
-            messageFont = Content.Load<SpriteFont>("MessageFont");
 
             screenWidth = GraphicsDevice.Viewport.Width;
             screenHeight = GraphicsDevice.Viewport.Height;
