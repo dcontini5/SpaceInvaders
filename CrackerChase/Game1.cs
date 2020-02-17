@@ -17,7 +17,6 @@ namespace CrackerChase
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-
         // Game World
         // These variables define the world 
 
@@ -25,9 +24,13 @@ namespace CrackerChase
         Target cracker;
         Sprite background;
         SoundEffect BurpSound;
+
+        Leaderboard leaderboard; // Leaderboard //
+
         SoundEffect LaserSound;
         SoundEffect ExplosionSound;
         SoundEffect BeepSound;
+
 
         int screenWidth;
         int screenHeight;
@@ -61,13 +64,14 @@ namespace CrackerChase
             timer = 600;
             score = 0;
 
-           
+
         }
 
-      
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
+            
             Content.RootDirectory = "Content";
         }
 
@@ -90,6 +94,9 @@ namespace CrackerChase
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            leaderboard = new Leaderboard(); // Load the Leaderboard //
+            leaderboard.LoadContent(graphics, spriteBatch);
 
             messageFont = Content.Load<SpriteFont>("MessageFont");
 
@@ -136,9 +143,9 @@ namespace CrackerChase
         }
 
 
-     
 
-        
+
+
         /// <summary>
         /// Allows the game to run logic such as updating the world,
         /// checking for collisions, gathering input, and playing audio.
@@ -150,7 +157,6 @@ namespace CrackerChase
 
             if (playing)
             {
-
 
                 if (keys.IsKeyDown(Keys.Up))
                 {
@@ -217,6 +223,7 @@ namespace CrackerChase
             {
                 if (keys.IsKeyDown(Keys.Space))
                 {
+                    leaderboard.DrawContent(); // Display the Leaderboard //
                     Exit();
                 }
             }
@@ -224,8 +231,8 @@ namespace CrackerChase
             base.Update(gameTime);
         }
 
-        
-        
+
+
 
         /// <summary>
         /// This is called when the game should draw itself.
