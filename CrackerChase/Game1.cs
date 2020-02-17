@@ -23,6 +23,10 @@ namespace CrackerChase
         Mover cheese;
         Target cracker;
         Sprite background;
+
+        Sprite Obsticle;
+
+        //sounds
         SoundEffect BurpSound;
 
         Leaderboard leaderboard; // Leaderboard //
@@ -31,12 +35,12 @@ namespace CrackerChase
         SoundEffect ExplosionSound;
         SoundEffect BeepSound;
 
-
         int screenWidth;
         int screenHeight;
 
         List<Sprite> gameSprites = new List<Sprite>();
         List<Target> crackers = new List<Target>();
+        List<Sprite> Obsticles = new List<Sprite>();
 
         SpriteFont messageFont;
 
@@ -58,12 +62,18 @@ namespace CrackerChase
             {
                 t.Reset();
             }
+            foreach (Sprite s in Obsticles)
+            {
+                s.Reset();
+            }
+
             messageString = "Cracker Chase";
 
             playing = true;
             timer = 600;
-            score = 0;
+            score = 0;         
 
+          
 
         }
 
@@ -106,6 +116,7 @@ namespace CrackerChase
             Texture2D cheeseTexture = Content.Load<Texture2D>("cheese");
             Texture2D cloth = Content.Load<Texture2D>("Tablecloth");
             Texture2D crackerTexture = Content.Load<Texture2D>("cracker");
+            Texture2D ObsticleTexture = Content.Load<Texture2D>("Space_invaders_character_2 (1)");
 
             BurpSound = Content.Load<SoundEffect>("Burp");
             LaserSound = Content.Load<SoundEffect>("Laser");
@@ -122,6 +133,16 @@ namespace CrackerChase
                 cracker = new Target(screenWidth, screenHeight, crackerTexture, crackerWidth, 0, 0);
                 gameSprites.Add(cracker);
                 crackers.Add(cracker);
+            }
+
+            // obsticle
+            int j = 250;
+            for (int i = 0; i < 3; i++)
+            {
+                j += 80;
+                Obsticle = new Sprite(screenWidth, screenHeight, ObsticleTexture, crackerWidth, j, 350);
+                gameSprites.Add(Obsticle);
+                Obsticles.Add(Obsticle);
             }
 
             int cheeseWidth = screenWidth / 15;

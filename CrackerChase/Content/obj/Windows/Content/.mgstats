@@ -1,0 +1,10 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"G:/Dev_group_Git/CrackerChase/Content/Beep.wav","G:/Dev_group_Git/CrackerChase/Content/bin/Windows/Content/Beep.xnb","SoundEffectProcessor","SoundEffectContent",52988,52957,0.3184974
+"G:/Dev_group_Git/CrackerChase/Content/Burp.wav","G:/Dev_group_Git/CrackerChase/Content/bin/Windows/Content/Burp.xnb","SoundEffectProcessor","SoundEffectContent",152478,150401,0.4090151
+"G:/Dev_group_Git/CrackerChase/Content/cheese.png","G:/Dev_group_Git/CrackerChase/Content/bin/Windows/Content/cheese.xnb","TextureProcessor","Texture2DContent",20995,40085,0.2912201
+"G:/Dev_group_Git/CrackerChase/Content/cracker.png","G:/Dev_group_Git/CrackerChase/Content/bin/Windows/Content/cracker.xnb","TextureProcessor","Texture2DContent",31993,10085,0.0866518
+"G:/Dev_group_Git/CrackerChase/Content/Explosion.wav","G:/Dev_group_Git/CrackerChase/Content/bin/Windows/Content/Explosion.xnb","SoundEffectProcessor","SoundEffectContent",191328,191297,0.2084111
+"G:/Dev_group_Git/CrackerChase/Content/Laser.wav","G:/Dev_group_Git/CrackerChase/Content/bin/Windows/Content/Laser.xnb","SoundEffectProcessor","SoundEffectContent",154844,154813,0.1984667
+"G:/Dev_group_Git/CrackerChase/Content/MessageFont.spritefont","G:/Dev_group_Git/CrackerChase/Content/bin/Windows/Content/MessageFont.xnb","FontDescriptionProcessor","SpriteFontContent",2068,21521,0.2726722
+"G:/Dev_group_Git/CrackerChase/Content/Space_invaders_character_2 (1).jpeg","G:/Dev_group_Git/CrackerChase/Content/bin/Windows/Content/Space_invaders_character_2 (1).xnb","TextureProcessor","Texture2DContent",12236,442453,0.2046919
+"G:/Dev_group_Git/CrackerChase/Content/Tablecloth.png","G:/Dev_group_Git/CrackerChase/Content/bin/Windows/Content/Tablecloth.xnb","TextureProcessor","Texture2DContent",1268823,1920085,0.5687715
