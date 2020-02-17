@@ -25,6 +25,9 @@ namespace CrackerChase
         Target cracker;
         Sprite background;
         SoundEffect BurpSound;
+        SoundEffect LaserSound;
+        SoundEffect ExplosionSound;
+        SoundEffect BeepSound;
 
         int screenWidth;
         int screenHeight;
@@ -98,6 +101,9 @@ namespace CrackerChase
             Texture2D crackerTexture = Content.Load<Texture2D>("cracker");
 
             BurpSound = Content.Load<SoundEffect>("Burp");
+            LaserSound = Content.Load<SoundEffect>("Laser");
+            ExplosionSound =  Content.Load<SoundEffect>("Explosion");
+            BeepSound = Content.Load<SoundEffect>("Beep");
 
             background = new Sprite(screenWidth, screenHeight, cloth, screenWidth, 0, 0);
             gameSprites.Add(background);
